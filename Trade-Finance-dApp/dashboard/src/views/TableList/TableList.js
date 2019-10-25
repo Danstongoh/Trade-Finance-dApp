@@ -11,7 +11,7 @@ import CardBody from "components/Card/CardBody.js";
 
 
 //testing
-import {CounterView} from "state/CounterView.js";
+import {View} from "state/View.js";
 
 const styles = {
   cardCategoryWhite: {
@@ -49,7 +49,7 @@ export default function TableList() {
   const classes = useStyles();
   return (
     <div>
-    <CounterView/>
+    <View/>
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>

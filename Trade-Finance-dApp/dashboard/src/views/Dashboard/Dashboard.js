@@ -41,9 +41,8 @@ import {
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 //import { resolve } from "q";
 
-//testing
-// Hello
-import {CounterView} from "state/CounterView.js";
+import {View} from "state/View";
+import {Test} from "state/Test";
 
 const useStyles = makeStyles(styles);
 
@@ -52,7 +51,7 @@ export default function Dashboard() {
   return (
       
     <div>
-    <CounterView/>
+    <View/><Test/>
       <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
