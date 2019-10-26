@@ -4,7 +4,8 @@ var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 export const initialState ={
     
     hash: '',
-    blockNo: 0
+    number: 0, 
+    time_elapsed: 0
     
 };
 
@@ -35,9 +36,15 @@ export const loadBlocks = block => async () => {
     const res = await web3.eth.getBlock("latest").then(
         (result) => block.setState({
             hash:result.hash,
-            blockNo: result.number
+            number: result.number, 
         })
-    )
+
+    );
+    
     //settings.setState({ loading: false, config: res });
     //block.setState({ loading: false, config: res });
   }
+
+export const incrementBlockNumber = block => by => {
+    block.setState({ time_elapsed: block.state.time_elapsed + by });
+  };

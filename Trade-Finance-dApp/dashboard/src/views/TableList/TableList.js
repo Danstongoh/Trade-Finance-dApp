@@ -12,7 +12,8 @@ import CardBody from "components/Card/CardBody.js";
 
 //testing
 import {View} from "state/View.js";
-
+import Test from "state/Test.js";
+import TestDetails from 'state/TestDetails.js'
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -49,17 +50,21 @@ export default function TableList() {
   const classes = useStyles();
   return (
     <div>
-    <View/>
     <GridContainer>
-      <GridItem xs={12} sm={12} md={12}>
+
+      {<GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>Smart Contract History</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Trade between NTUC and Lotte
             </p>
           </CardHeader>
-          <CardBody>
+            {TestDetails("0x2F84804a3dF6584Cd2F5cCD9e75AA1D2c8524aC9")}
+              {Test("0x2F84804a3dF6584Cd2F5cCD9e75AA1D2c8524aC9")}
+             
+
+          {/* <CardBody>
             <Table
               tableHeaderColor="primary"
               tableHead={["Name", "Country", "City", "Salary"]}
@@ -72,10 +77,10 @@ export default function TableList() {
                 ["Mason Porter", "Chile", "Gloucester", "$78,615"]
               ]}
             />
-          </CardBody>
+          </CardBody> */}
         </Card>
-      </GridItem>
-      <GridItem xs={12} sm={12} md={12}>
+      </GridItem>}
+      {/* <GridItem xs={12} sm={12} md={12}>
         <Card plain>
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>
@@ -112,7 +117,7 @@ export default function TableList() {
             />
           </CardBody>
         </Card>
-      </GridItem>
+      </GridItem> */}
     </GridContainer>
     </div>
   );
