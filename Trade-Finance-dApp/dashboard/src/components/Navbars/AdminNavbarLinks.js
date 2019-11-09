@@ -21,7 +21,11 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
+
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+
 const useStyles = makeStyles(styles);
+
 
 export default function AdminNavbarLinks() {
   const classes = useStyles();
@@ -47,9 +51,12 @@ export default function AdminNavbarLinks() {
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
+  function redirect(){
+    window.location.replace('http://localhost:3000/login.html');
+}
   return (
     <div>
-      <div className={classes.searchWrapper}>
+      {/* <div className={classes.searchWrapper}>
         <CustomInput
           formControlProps={{
             className: classes.margin + " " + classes.search
@@ -64,8 +71,8 @@ export default function AdminNavbarLinks() {
         <Button color="white" aria-label="edit" justIcon round>
           <Search />
         </Button>
-      </div>
-      <Button
+      </div> */}
+      {/* <Button
         color={window.innerWidth > 959 ? "transparent" : "white"}
         justIcon={window.innerWidth > 959}
         simple={!(window.innerWidth > 959)}
@@ -76,7 +83,7 @@ export default function AdminNavbarLinks() {
         <Hidden mdUp implementation="css">
           <p className={classes.linkText}>Dashboard</p>
         </Hidden>
-      </Button>
+      </Button> */}
       <div className={classes.manager}>
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
@@ -155,7 +162,15 @@ export default function AdminNavbarLinks() {
           )}
         </Poppers>
       </div>
-      <div className={classes.manager}>
+
+          <Button 
+          color={window.innerWidth > 959 ? "transparent" : "white"}
+              
+          aria-label="Dashboard"
+          onClick={redirect}
+          >Logout</Button>
+
+      {/* <div className={classes.manager}>
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
@@ -207,7 +222,8 @@ export default function AdminNavbarLinks() {
                     </MenuItem>
                     <Divider light />
                     <MenuItem
-                      onClick={handleCloseProfile}
+                       
+                      //onClick={window.location.replace('http://www.google.com')}
                       className={classes.dropdownItem}
                     >
                       Logout
@@ -218,7 +234,7 @@ export default function AdminNavbarLinks() {
             </Grow>
           )}
         </Poppers>
-      </div>
+      </div> */}
     </div>
   );
 }

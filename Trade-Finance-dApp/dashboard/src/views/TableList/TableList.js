@@ -8,12 +8,16 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
+import UserProfile from 'views/auth.js';
 
 //testing
 import {View} from "state/View.js";
+
+import axios from "axios";
 import Test from "state/Test.js";
 import TestDetails from 'state/TestDetails.js'
+import TestSend from "state/TestSend.js";
+
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -45,7 +49,8 @@ const styles = {
 };
 
 const useStyles = makeStyles(styles);
-
+UserProfile.setName("1");
+console.log(UserProfile.getName());
 export default function TableList() {
   const classes = useStyles();
   return (
@@ -60,9 +65,9 @@ export default function TableList() {
               Trade between NTUC and Lotte
             </p>
           </CardHeader>
-            {TestDetails("0x2F84804a3dF6584Cd2F5cCD9e75AA1D2c8524aC9")}
-              {Test("0x2F84804a3dF6584Cd2F5cCD9e75AA1D2c8524aC9")}
-             
+            {TestDetails("0xC9bd8521c4Ff42e42888937F425C922D9c08e783")}
+              {Test("0xC9bd8521c4Ff42e42888937F425C922D9c08e783")}
+             {TestSend('0xC9bd8521c4Ff42e42888937F425C922D9c08e783')}
 
           {/* <CardBody>
             <Table

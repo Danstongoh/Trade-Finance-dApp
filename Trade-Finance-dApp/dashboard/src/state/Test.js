@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Web3 from 'web3';
-import {letterofcredit} from './smartContract';
 import {contractDetails} from './contractJSON';
-import  useInterval from './interval';
-import {useContract} from './entity/contract-entity';
-
 
 import Table from "components/Table/Table.js";
 import CardBody from "components/Card/CardBody.js";
@@ -54,21 +50,14 @@ var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
             </CardBody>
 
     
-    )
+        )
     }
 
     if (contracts.length ===0){
-        return (
-
-            <> Loading</>
-        )
+        return (<> Loading</>)
         }
     };
     
-
-     // deployedContract.getPastEvents("allEvents", {
-        //     fromBlock: 0,toBlock: 'latest'
-        //     }).then(console.log);
 
 
     // let [count, setCount] = useState(0);
@@ -105,23 +94,4 @@ var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
     //         console.log('receipt', receipt)
     //     });
         
-        //var deployedContract = new web3.eth.Contract(contractDetails, '0x2F84804a3dF6584Cd2F5cCD9e75AA1D2c8524aC9');
-       
-        // deployedContract.getPastEvents("allEvents", {
-        //     fromBlock: 0,toBlock: 'latest'
-        //     }).then(console.log);
 
-        // const [contract, {loadContractEvents}] = useContract();
-     
-            
-        // useInterval(() => {
- 
-        //     loadContractEvents();  
-        //     }, 2000);
-                
-        // console.log(contract.event_lists)
-//   return (
-
-//     <>  {contracts}</>
-//   )
-// };
